@@ -1,7 +1,7 @@
 "use-client";
 
 import Brands from "@/components/Home/Brands";
-import SwiperComp from "@/components/Home/Carousel";
+import SwiperComp from "@/components/Home/Hero";
 import { brand } from "@/models/models";
 
 const Home = () => {

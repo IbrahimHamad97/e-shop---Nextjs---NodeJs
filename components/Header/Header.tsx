@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
 import { Input } from "../ui/input";
 import Cart from "./Cart";
 import Favorites from "./Favorites";
@@ -41,11 +42,16 @@ const Header = () => {
   }, []);
 
   if (!mounted) {
-    return null;
+    return <div className="h-[128px]"></div>;
   }
 
   return (
-    <nav className="py-4 flex flex-col gap-4">
+    <motion.nav
+      className="py-4 flex flex-col gap-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="flex items-center justify-between">
         <Link href="/">
           <Image
@@ -111,7 +117,7 @@ const Header = () => {
         </div>
       </div>
       <Categories theme={theme} />
-    </nav>
+    </motion.nav>
   );
 };
 
